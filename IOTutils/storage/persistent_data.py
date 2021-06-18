@@ -7,9 +7,9 @@ class PersistentData:
         This is the base class that can be used to expand the functionnality
         to include data types.
         
-        :param name: name of the file storing the data
-        :param default: default value if the file doesn't exists
-        :param folder: folder where the file is used
+        :param str name: name of the file storing the data
+        :param str default: default value if the file doesn't exists
+        :param str folder: folder where the file is used
         """
         self.name = name
         self.folder = folder
@@ -28,12 +28,16 @@ class PersistentData:
     def path(self):
         """
         Path to file
+        :return: path to file
+        :rtype: str
         """
         return "/" + self.folder + "/" + self.name
         
     def read(self):
         """
         Return the content of the file or default value in case of failure
+        :return: content of the file or self.default
+        :rtype: str
         """
         try:
             with open(self.path, "r") as file:
@@ -54,6 +58,8 @@ class PersistentData:
     def value(self):
         """
         File value getter
+        :return: sanityzed value.
+        :rtype: depends on sanityze()
         """
         return self.sanityze(self.read())
         
@@ -61,6 +67,7 @@ class PersistentData:
     def value(self, value):
         """
         File value setter
+        :param value: Value to write into the file
         """
         self.write(self.sanityze(value))
     
@@ -68,5 +75,6 @@ class PersistentData:
          """
          Sanitize value to fit data type.
          This method is there to be overloaded by child class
+         :param value: Value to sanityze
          """
          return value
