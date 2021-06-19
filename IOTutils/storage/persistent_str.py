@@ -1,11 +1,11 @@
 from . import PersistentData
 
+
 class PersistentString(PersistentData):
-    
     """
     String persistent data
     """
-    
+
     def sanityze(self, value):
         """
         Sanityze value into a string
@@ -15,9 +15,8 @@ class PersistentString(PersistentData):
         
         :example:
         
-        >>> value=1234
-        >>> sanityze(value)
+        >> value=1234
+        >> sanityze(value)
         "1234"
         """
         return str(value)
-

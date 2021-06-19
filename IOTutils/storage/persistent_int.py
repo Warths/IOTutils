@@ -1,11 +1,11 @@
 from . import PersistentFloat
 
+
 class PersistentInteger(PersistentFloat):
-    
     """
     Integer persistent data
     """
-    
+
     def sanityze(self, value):
         """
         Sanityze value into an integer
@@ -15,8 +15,8 @@ class PersistentInteger(PersistentFloat):
         
         :example:
         
-        >>> value="1.0"
-        >>> sanityze(value)
+        >> value="1.0"
+        >> sanityze(value)
         1
         """
         return int(super().sanityze(value))

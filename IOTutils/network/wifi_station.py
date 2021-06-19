@@ -1,5 +1,6 @@
 from . import STA, AP
 
+
 class WifiStation:
     def __init__(self, sta_ssid, sta_pass, ap_ssid, ap_pass, timeout=10):
         """
@@ -13,7 +14,3 @@ class WifiStation:
         """
         self.sta = STA(sta_ssid, sta_pass, timeout)
         self.ap = AP(ap_ssid, ap_pass)
-
-        
-        
-        

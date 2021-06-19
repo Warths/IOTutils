@@ -1,5 +1,6 @@
 import os
 
+
 class PersistentData:
     def __init__(self, name, default="", folder="STORAGE"):
         """
@@ -14,7 +15,7 @@ class PersistentData:
         self.name = name
         self.folder = folder
         self.default = default
-        
+
     def mkdir(self):
         """
         Create the folder of the persistent data
@@ -23,7 +24,7 @@ class PersistentData:
             os.mkdir(self.folder)
         except OSError:
             pass
-    
+
     @property
     def path(self):
         """
@@ -32,7 +33,7 @@ class PersistentData:
         :rtype: str
         """
         return "/" + self.folder + "/" + self.name
-        
+
     def read(self):
         """
         Return the content of the file or default value in case of failure
@@ -43,8 +44,8 @@ class PersistentData:
             with open(self.path, "r") as file:
                 return file.read()
         except OSError:
-                return self.default
-            
+            return self.default
+
     def write(self, value):
         """
         Write the value in the file.
@@ -52,8 +53,8 @@ class PersistentData:
         """
         self.mkdir()
         with open(self.path, "w") as file:
-             file.write(str(value))
-    
+            file.write(str(value))
+
     @property
     def value(self):
         """
@@ -62,7 +63,7 @@ class PersistentData:
         :rtype: depends on sanityze()
         """
         return self.sanityze(self.read())
-        
+
     @value.setter
     def value(self, value):
         """
@@ -70,11 +71,11 @@ class PersistentData:
         :param value: Value to write into the file
         """
         self.write(self.sanityze(value))
-    
+
     def sanityze(self, value):
-         """
-         Sanitize value to fit data type.
-         This method is there to be overloaded by child class
-         :param value: Value to sanityze
-         """
-         return value
+        """
+        Sanitize value to fit data type.
+        This method is there to be overloaded by child class
+        :param value: Value to sanityze
+        """
+        return value
