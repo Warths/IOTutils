@@ -25,7 +25,7 @@ ___
       Access point and stations can be activated/deactivated in one line.
       
  - #### WebServer
-      The HTTP Webserver makes it easy to create receive requests over IP.
+      The HTTP Webserver makes it easy to receive requests over IP.
       The HTTP requests can be handled by multiple workers, that can be threaded. 
       Concurrent code can then be ran, while serving multiple clients. 
       Multiple workers also allows hang-free browsing, as it's compatible with speculative sockets opening.
@@ -34,11 +34,15 @@ ___
  - ..That's all, folks. For now!
 ___
 **Roadmap:**
-- #### Wifi Access point and Station
+- #### Wifi Access point and Station 
+  `In Progress`
+  
   IOT Devices often need access to a Wifi network to communicate with other devices. 
   Wifi is also often used to configure the access point, provide an administration and basic configuration page.
 
 - #### Threaded Webserver
+  `In Progress`
+  
    A Threaded web server would allows running concurrent code while serving web pages, running server backend, or create an API
 
 - #### More PersistentData types : 
