@@ -21,6 +21,18 @@ ___
 	 
 	 PersistantData exists in different extended classes that allows choosing a data `type`. The value will **always** be truncated/formatted to match the data type. If the data fails to be truncated, a `ValueError` is raised.
  Supported types are : `boolean`, `integer`, `float`, `string`. 
+ 
+ - #### Wifi AP/STA Interface
+      The WifiStation condenses the basic features of Station and Access Point interfaces to make it easier
+      Access point and stations can be activated/deactivated in one line.
+      
+ - #### WebServer
+      The HTTP Webserver makes it easy to create receive requests over IP.
+      The HTTP requests can be handled by multiple workers, that can be threaded. 
+      Concurrent code can then be ran, while serving multiple clients. 
+      Multiple workers also allows hang-free browsing, as it's compatible with speculative sockets opening.
+      `Note: WebServer currently only supports headers and closes before processing the body.`
+      
  - ..That's all, folks. For now!
 ___
 **Roadmap:**
