@@ -3,15 +3,13 @@
 **An ESP32 Toolbox for making IOT devices**
 ___
 While working a lot with Micropython on ESP32 to make smart devices, I noticed that I rewrote many times a lot of code that is common among those devices. 
-
-In this code are basic IOT functions such as : 
-- Wifi Station/HotSpot, configurable without flashing the board
+- Features such as Wifi Station/HotSpot, configurable without flashing the board
 - Config files / reboot-resilient variables
 - Threaded Web Server
 - OTA Updates 
 - Alexa Support
 - (more)
-
+As the board as plenty of RAM and Flash storage available, I thought it could make my life easier in the future to group every of those features into a single package. 
 ___
 
 **Current features :**
